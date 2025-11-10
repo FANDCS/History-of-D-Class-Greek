@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Διαδραστικά Μαθήματα Ιστορίας Δ'</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    hr {
+      border: none;
+      height: 3px;
+      width: 80px;
+      background: linear-gradient(90deg, #00b4db, #0083b0);
+      margin: 20px auto 40px auto;
+      border-radius: 5px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .app-button {
+      position: relative;
+      color: white;
+      padding: 25px 20px;
+      border: none;
+      border-radius: 15px;
+      font-size: 16px;
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      min-height: 120px;
+      overflow: hidden;
+    }
+
+    /* Εικόνες φόντου για κάθε κουμπί */    
+    .app-button:nth-child(1) { background-image: url('webmedia/roma.png'); }
+    .app-button:nth-child(2) { background-image: url('webmedia/daily_life.png'); }
+    .app-button:nth-child(3) { background-image: url('webmedia/greek_cities.png'); }
+    .app-button:nth-child(4) { background-image: url('webmedia/art.png'); }
+    .app-button:nth-child(5) { background-image: url('webmedia/constantine.png'); }
+    .app-button:nth-child(6) { background-image: url('webmedia/constantinople.png'); }
+    .app-button:nth-child(7) { background-image: url('webmedia/successors.png'); }
+    .app-button:nth-child(8) { background-image: url('webmedia/justinian.png'); }
+    .app-button:nth-child(9) { background-image: url('webmedia/heraclius.png'); }
+    .app-button:nth-child(10) { background-image: url('webmedia/village_life.png'); }
+    .app-button:nth-child(11) { background-image: url('webmedia/isaurian.png'); }
+    .app-button:nth-child(12) { background-image: url('webmedia/macedonian.png'); }
+    .app-button:nth-child(13) { background-image: url('webmedia/decline.png'); }
+    .app-button:nth-child(14) { background-image: url('webmedia/crusades.png'); }
+    .app-button:nth-child(15) { background-image: url('webmedia/thessaloniki.png'); }
+    .app-button:nth-child(16) { background-image: url('webmedia/ottomans.png'); }
+    .app-button:nth-child(17) { background-image: url('webmedia/fall_of_byzantium.png'); }
+    .app-button:nth-child(18) { background-image: url('webmedia/roma.png'); }
+    .app-button:nth-child(19) { background-image: url('webmedia/daily_life.png'); }
+    .app-button:nth-child(20) { background-image: url('webmedia/greek_cities.png'); }
+    .app-button:nth-child(21) { background-image: url('webmedia/art.png'); }
+    .app-button:nth-child(22) { background-image: url('webmedia/constantine.png'); }
+    .app-button:nth-child(23) { background-image: url('webmedia/constantinople.png'); }
+    .app-button:nth-child(24) { background-image: url('webmedia/successors.png'); }
+    .app-button:nth-child(25) { background-image: url('webmedia/justinian.png'); }
+    .app-button:nth-child(26) { background-image: url('webmedia/heraclius.png'); }
+    .app-button:nth-child(27) { background-image: url('webmedia/village_life.png'); }
+    .app-button:nth-child(28) { background-image: url('webmedia/isaurian.png'); }
+    .app-button:nth-child(29) { background-image: url('webmedia/macedonian.png'); }
+    .app-button:nth-child(30) { background-image: url('webmedia/decline.png'); }
+    .app-button:nth-child(31) { background-image: url('webmedia/crusades.png'); }
+    .app-button:nth-child(32) { background-image: url('webmedia/thessaloniki.png'); }
+    .app-button:nth-child(33) { background-image: url('webmedia/ottomans.png'); }
+    .app-button:nth-child(34) { background-image: url('webmedia/fall_of_byzantium.png'); }
+    .app-button:nth-child(35) { background-image: url('webmedia/fall_of_byzantium.png'); }
+
+
+    .app-button::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .app-button span {
+      position: relative;
+      z-index: 2;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+      font-weight: 600;
+      line-height: 1.4;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .app-button:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .app-button:hover::before {
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      
+      .app-button {
+        font-size: 15px;
+        padding: 20px 15px;
+        min-height: 100px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .app-button {
+        font-size: 14px;
+        padding: 18px 12px;
+        min-height: 90px;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      font-size: 14px;
+      border-radius: 10px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer h4 {
+      margin: 0 0 15px 0;
+      color: #00b4db;
+    }
+
+    footer p {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: #00b4db;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Διαδραστικά Μαθήματα Ιστορίας Δ' Τάξης Δημοτικού</h1>
+  <hr>
+  
+  <div class="container">
+    <a href="Φίλιππος ο Β΄, βασιλιάς της Μακεδονίας - Storyline output.html" class="app-button"><span>Φίλιππος ο Β΄, Βασιλιάς της Μακεδονίας</span></a>  
+    <a href="Το ρωμαϊκό κράτος - Storyline output.html" class="app-button"><span>Το Ρωμαϊκό κράτος</span></a>
+    <a href="Τα πολιτεύματα στην αρχαία Ελλάδα - Storyline output.html" class="app-button"><span>Τα πολιτεύματα στην Αρχαία Ελλάδα</span></a>
+    <a href="Τα κράτη των Διαδόχων του Μεγάλου Αλεξάνδρου - Storyline output.html" class="app-button"><span>Τα κράτη των Διαδόχων του Μεγάλου Αλεξάνδρου</span></a>    
+    <a href="Τα γράμματα στην αρχαϊκή εποχή - Storyline output.html" class="app-button"><span>Τα Γράμματα στην Αρχαϊκή Εποχή</span></a>    
+    <a href="ΠΕΡΣΙΚΟΙ ΠΟΛΕΜΟΙ  - Storyline output.html" class="app-button"><span>Περσικοί Πόλεμοι</span></a>    
+    <a href="ΠΑΝΕΛΛΗΝΙΟΙ ΑΓΩΝΕΣ new 7 Νοε - Storyline output.html" class="app-button"><span>Παννελήνιοι Αγώνες</span></a>    
+    <a href="Πύρρος, ο βασιλιάς της Ηπείρου - Storyline output.html" class="app-button"><span>Πύρρος, ο Βασιλιάς της Ηπείρου</span></a>    
+    <a href="ΟΙ ΤΕΧΝΕΣ ΚΑΙ ΤΑ ΓΡΑΜΜΑΤΑ ΣΤΑ ΕΛΛΗΝΙΣΤΙΚΑ ΧΡΟΝΙΑ - Storyline output.html" class="app-button"><span>Οι Τέχνες Και Τα Γράμματα Στα Ελληνιστικά Χρόνια</span></a>    
+    <a href="Οι πρώτες ελληνικές αποικίες - Storyline output.html" class="app-button"><span>Οι Πρώτες Ελληνικές Αποικίες</span></a>
+    <a href="Ο χρυσός αιώνας της τέχνης - Storyline output.html" class="app-button"><span>Ο Χρυσός Αιώνας της Τέχνης - Storyline output</span></a>    
+    <a href="Ο Πελοποννησιακός πόλεμος - Storyline output.html" class="app-button"><span>Ο Πελοποννησιακός Πόλεμος</span></a>        
+    <a href="Νέες ελληνικές αποικίες  - Storyline output.html" class="app-button"><span>Νέες Ελληνικές Αποικίες</span></a>
+    <a href="Μακεδονία, μια νέα ελληνική δύναμη - Storyline output.html" class="app-button"><span>Μακεδονία, μια Νέα Ελληνική Δύναμη</span></a>    
+    <a href="Μέγας Αλέξανδρος - Storyline output.html" class="app-button"><span>Μέγας Αλέξανδρος</span></a>    
+    <a href="ΚΟΙΝΟΙ ΔΕΣΜΟΙ  - Storyline output.html" class="app-button"><span>Κοινοί Δεσμοί</span></a>
+    <a href="Η ΤΕΧΝΗ ΤΗΣ ΑΡΧΑΪΚΗΣ ΕΠΟΧΗΣ  - Storyline output.html" class="app-button"><span>Η Τέχνη Της Αρχαϊκής Εποχής  </span></a>
+    <a href="Η τέχνη και η κατοικία στη γεωμετρική εποχή - Storyline output.html" class="app-button"><span>Η Τέχνη και η Κατοικία στη Γεωμετρική Εποχή</span></a>  
+    <a href="Η ΣΠΑΡΤΗ  - Storyline output.html" class="app-button"><span>Η Σπάρτη</span></a>
+    <a href="Η ρωμαϊκή Κατάκτηση της Ελλάδας - Storyline output.html" class="app-button"><span>Η Ρωμαϊκή Κατάκτηση της Ελλάδας</span></a>
+    <a href="Η ποίηση και η Θρησκεία των Ελλήνων - Storyline output.html" class="app-button"><span>Η Ποίηση και η Θρησκεία των Ελλήνων</span></a>    
+    <a href="Η ποίηση και η Θρησκεία των Ελλήνων - OLD- Storyline output.html" class="app-button"><span>Η Ποίηση και η Θρησκεία των Ελλήνων</span></a>    
+    <a href="Η ΚΑΘΗΜΕΡΙΝΗ ΖΩΗ και η ΕΚΠΑΙΔΕΥΣΗ ΤΩΝ ΑΘΗΝΑΙΩΝ - Storyline output.html" class="app-button"><span>Η Καθημερινή Ζωή και η Εκπαίδευση των Αθηναίων</span></a>    
+    <a href="Η κάθοδος των Δωριέων - Storyline output.html" class="app-button"><span>Η Κάθοδος των Δωριέων</span></a>    
+    <a href="Η Ηγεμονία της Θήβας - Storyline output.html" class="app-button"><span>Η Ηγεμονία της Θήβας</span></a>    
+    <a href="Η ελληνική γραφή ΠΑΛΙΟ- Storyline output.html" class="app-button"><span>Η Ελληνική Γραφή</span></a>    
+    <a href="Η ΓΡΑΦΗ ΤΩΝ ΑΡΧΑΙΩΝ ΕΛΛΗΝΩΝ - Storyline output.html" class="app-button"><span>Η Γραφή των Αρχαίων Ελλήνων</span></a>
+    <a href="Ο χρυσός αιώνας της τέχνης - Storyline output.html" class="app-button"><span>Ο Χρυσός Αιώνας της Τέχνης - Storyline output</span></a>    
+    <a href="Η ΑΡΧΑΙΑ ΡΩΜΗ - Storyline output.html" class="app-button"><span>Η Αρχαία Ρώμη</span></a>        
+    <a href="Η Αθήνα γίνεται η πιο ισχυρή πόλη - Storyline output.html" class="app-button"><span>Η Αθήνα Γίνεται η Πιο Ισχυρή Πόλη</span></a>
+    <a href="Αχαιοί, οι πρώτοι Έλληνες  - Storyline output.html" class="app-button"><span>Αχαιοί, Οι Πρώτοι Έλληνες</span></a>    
+    <a href="αρχαία ελληνική γραφή - ΠΑΛΙΟ_Storyline output.html" class="app-button"><span>Αρχαία Ελληνική Γραφή</span></a>    
+    <a href="ΑΘΗΝΑ, Η ΠΟΛΗ ΠΟΥ ΓΕΝΝΗΣΕ ΤΗ ΔΗΜΟΚΡΑΤΙΑ - Storyline output.html" class="app-button"><span>Αθήνα, Η Πόλη που Γέννησε την Δημοκρατία</span></a>
+    <a href="Αθήνα γίνεται σχολείο της Ελλάδας - Storyline output.html" class="app-button"><span>Η Αθήνα Γίνεται το Σχολείο της Ελλάδας</span></a>
+    <a href="H ΚΑΡΧΗΔΟΝΙΑ ΣΥΓΚΡΟΥΕΤΑΙ ΜΕ ΤΗ ΡΩΜΗ   - Storyline output.html" class="app-button"><span>Η Καρχηδονία συγκρούεται την Ρώμη</span></a>
+  </div>
+  
+  <footer>
+    <h4>Τεχνικές Πληροφορίες</h4>
+    <p>Ο επίσημος html-based ιστότοπος "τρέχει" μέσω των <a href="https://fandcs.github.io/History-of-D-Class-Greek"><b>GitHub Pages</b></a>, ο κεντρικός ιστότοπος είναι <a href="https://sites.google.com/view/videoistoriastajewndimotikou/">Βίντεο και Μαθήματα Ιστορίας</a>. Εδώ γίνεται host μόνο των διαδραστικών εφαρμογών στον οργανισμό GitHub <a href="https://github.com/FANDCS">FANDCS</a>.</p>
+    <p><i>Τελευταία επεξεργασία: 10/11/2025</i></p>
+  </footer>
+</body>
+</html>
